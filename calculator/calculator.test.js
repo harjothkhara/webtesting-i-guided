@@ -3,6 +3,10 @@ const calculator = require('./calculator.js')
 
 describe('calculator.js', () => {
     describe('add() method', () => {
+            it('runs the tests', () => {
+                expect(true).toBe(true);
+            })
+
             // add two numbers - happy path
             it('should return the sum of two numbers', () => {
                                             
@@ -38,6 +42,15 @@ describe('calculator.js', () => {
             expect(calculator.add(1,2,3)).toBe(6);
         });
 
-       
+        // add support for handling an array of numbers
+        it('should handle an array of numbers', () => {
+            expect(calculator.add([1,2,3])).toBe(6);
+        });
+
+        it('toBe or not.toBe', () => {
+            expect(true).not.toBe(false);
+            expect({ name: 'John'}).toBe({ name: 'John'});
+                                        //different object, same with arrays
+        });
     });
 });
