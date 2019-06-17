@@ -1,4 +1,5 @@
 const calculator = require('./calculator.js')
+        // { add } destructure and bring in only one pure function to unit test only one method
 
 
 describe('calculator.js', () => {
@@ -48,9 +49,11 @@ describe('calculator.js', () => {
         });
 
         it('toBe or not.toBe', () => {
+            const person = { name: 'John'};
             expect(true).not.toBe(false);
-            expect({ name: 'John'}).toBe({ name: 'John'});
-                                        //different object, same with arrays
+            expect({ name: 'John'}).toEqual({ name: 'John'});
+                                    //will check properties of object not the reference in memory. 
+            expect(person.name).toBe('John');                  
         });
     });
 });
